@@ -7,14 +7,14 @@ Xiangmin Xu
 The paper is accepted to CVPR2024.
 
 <div align="center">
-  <img src=".github/overview_doq.png" width="900px" />
+  <img src=".github/overview_dphoi.png" width="900px" />
 </div>
 
 ## Preparation
 
 ### Environment
-Our implementation uses environment the same as [QPIC](https://github.com/hitachi-rd-cv/qpic),
-please follow QPIC to set up pytorch environment.
+Our implementation uses environment the same as [HOICLIP](https://github.com/Artanic30/HOICLIP),
+please follow HOICLIP to set up pytorch environment.
 
 ### Dataset
 
@@ -26,9 +26,6 @@ qpic
  |       |─ annotations
  |       |   |─ trainval_hico.json
  |       |   |─ test_hico.json
- |       |   |─ sim_index_hico.pickle
- |       |   |─ coco_clipvec.npy
- |       |   └─ corre_hico.npy
  |       |─ images
  |       |   |─ test2015
  |       |   └─ train2015
@@ -40,9 +37,6 @@ qpic
  |       |   |─ corre_vcoco.npy
  |       |   |─ vcoco_test.json
  |       |   |─ instances_vcoco_all_2014.json
- |       |   |─ sim_index_vcoco.pickle
- |       |   |─ vcoco_clip.npy
- |       |   └─ vcoco_test.ids
  |       |─ images
  |       |   |─ train2014
  |       |   └─ val2014
@@ -61,7 +55,7 @@ qpic
 
 The annotations file,
 pre-trained weights and 
-trained parameters can be downloaded [here](https://drive.google.com/drive/folders/1dVaHxMbSIwStARIMH_kDbosA5ZDi84Rj?usp=sharing)
+trained parameters can be downloaded [here]()
 
 Please download the images at the official website for the datasets above.
 
@@ -88,8 +82,6 @@ main.py \
 --set_cost_giou 1 \
 --bbox_loss_coef 2.5 \
 --giou_loss_coef 1 \
---output_dir outputs/hico/ts_model/ \
---model_name hoi_ts 
 ```
 
 For the V-COCO training.
@@ -109,29 +101,6 @@ main.py \
 --set_cost_giou 1 \
 --bbox_loss_coef 2.5 \
 --giou_loss_coef 1 \
---output_dir outputs/vcoco/ts_model/ \
---model_name hoi_ts 
-```
-
-For the HOI-A training.
-```
-python -m torch.distributed.launch \
---nproc_per_node=8 \
---use_env \
-main.py \
---pretrained params/detr-r50-pre-hoia.pth \
---hoi \
---dataset_file hoia \
---hoi_path data/hoia/ \
---num_obj_classes 11 \
---num_verb_classes 10 \
---backbone resnet50 \
---set_cost_bbox 2.5 \
---set_cost_giou 1 \
---bbox_loss_coef 2.5 \
---giou_loss_coef 1 \
---output_dir outputs/hoia/ts_model/ \
---model_name hoi_ts 
 ```
 
 ## Evaluation
@@ -145,7 +114,7 @@ python -m torch.distributed.launch \
 --nproc_per_node=8 \
 --use_env \
 main.py \
---pretrained params/detr-r50-pre.pth \
+--pretrained params/checkpoint.pth \
 --hoi \
 --dataset_file hico \
 --hoi_path data/hico_20160224_det \
@@ -156,37 +125,8 @@ main.py \
 --set_cost_giou 1 \
 --bbox_loss_coef 2.5 \
 --giou_loss_coef 1 \
---output_dir outputs/hico/ts_model/ \
---model_name hoi_ts \
---resume outputs/hico/ts_model/checkpoint.pth \
 --eval \
---no_aux_loss
 ```
-
-HOI-A
-```
-python -m torch.distributed.launch \
---nproc_per_node=8 \
---use_env \
-main.py \
---pretrained params/detr-r50-pre-hoia.pth \
---hoi \
---dataset_file hoia \
---hoi_path data/hoia/ \
---num_obj_classes 11 \
---num_verb_classes 10 \
---backbone resnet50 \
---set_cost_bbox 2.5 \
---set_cost_giou 1 \
---bbox_loss_coef 2.5 \
---giou_loss_coef 1 \
---output_dir outputs/hoia/ts_model/ \
---model_name hoi_ts \
---resume outputs/hoia/ts_model/checkpoint.pth \
---eval \
---no_aux_loss
-```
-
 
 For the official evaluation of V-COCO, a pickle file of detection results have to be generated. You can generate the file as follows.
 ```
@@ -195,7 +135,6 @@ python generate_vcoco_official.py \
 --save_path vcoco.pickle \
 --hoi_path data/v-coco
 ```
-
 
 ## Results
 HICO-DET.
@@ -221,13 +160,13 @@ HOI-A.
 ## Citation
 Please consider citing our paper if it helps your research.
 ```
-@inproceedings{distillation_cvpr2022,
-author = {Xian Qu,Changxing Ding,Xingao Li,Xubin Zhong,Dacheng Tao},
-title = {Distillation Using Oracle Queries for Transformer-based Human-Object Interaction Detection},
+@inproceedings{disentangled_cvpr2024,
+author = {Zhuolong Li,Xingao Li,Changxing Ding,Xiangmin Xu},
+title = {Disentangled Pre-training for Human-Object Interaction Detection},
 booktitle={CVPR},
-year = {2022},
+year = {2024},
 }
 ```
 
 ## Acknowledgement
-[QPIC](https://github.com/hitachi-rd-cv/qpic)
+[HOICLIP](https://github.com/Artanic30/HOICLIP)
