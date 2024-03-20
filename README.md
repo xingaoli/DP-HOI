@@ -140,22 +140,16 @@ python generate_vcoco_official.py \
 HICO-DET.
 || Full (D) | Rare (D) | Non-rare (D) | Full(KO) | Rare (KO) | Non-rare (KO) |
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: |
-|ours (HOTR)| 25.97 | 26.09 | 25.93 | 28.23 | 28.22 | 33.93 |
-|ours (QPIC)| 31.55 | 26.75 | 32.99 | 34.15 | 29.62 | 35.50 |
-|ours (CNS-S)| 33.28 | 29.19 | 34.50 | 36.11 | 31.61 | 37.45 |
+|ours (CDN)| 34.27 | 30.02 | 35.54 | 37.05 | 33.09 | 38.23 |
+|ours (GEN_s)| 34.40 | 31.17 | 35.36 | 38.25 | 35.64 | 39.03 |
+|ours (HOICLIP)| 36.56 | 34.36 | 37.22 | - | - | - |
 
 D: Default, KO: Known object
 
 V-COCO.
 || Scenario 1 | 
 | :--- | :---: |
-|ours (ResNet50)| 63.5 |
-
-
-HOI-A.
-|| mAP | 
-| :--- | :---: |
-|ours (ResNet50)| 76.87 |
+|ours (GEN_s)| 66.2|
 
 ## Citation
 Please consider citing our paper if it helps your research.
