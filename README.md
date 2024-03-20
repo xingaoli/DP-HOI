@@ -1,11 +1,10 @@
-# Distillation Using Oracle Queries for Transformer-based Human-Object Interaction Detection
-Xian Qu,
-Changxing Ding,
+# Disentangled Pre-training for Human-Object Interaction Detection
+Zhuolong Li,
 Xingao Li,
-Xubin Zhong,
-Dacheng Tao
+Changxing Ding,
+Xiangmin Xu
 
-The paper is accepted to CVPR2022.
+The paper is accepted to CVPR2024.
 
 <div align="center">
   <img src=".github/overview_doq.png" width="900px" />
