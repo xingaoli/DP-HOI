@@ -7,7 +7,7 @@ Xiangmin Xu
 The paper is accepted to CVPR2024.
 
 <div align="center">
-  <img src=".github/overview_dphoi.png" width="900px" />
+  <img src="img/overview_dphoi.png" width="900px" />
 </div>
 
 ## Preparation
