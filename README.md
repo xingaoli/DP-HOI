@@ -142,6 +142,9 @@ cd ../HOICLIP
 sh ./scripts/train_hico.sh
 ```
 
+## Pre-trained model
+You can also directly download the [pretrained model]([htyt](https://google.com)) of DP-HOI for ResNet50.
+
 ## Results
 HICO-DET.
 || Full (D) | Rare (D) | Non-rare (D) | Full(KO) | Rare (KO) | Non-rare (KO) |
@@ -169,4 +172,4 @@ year = {2024},
 ```
 
 ## Acknowledgement
-[HOICLIP](https://github.com/Artanic30/HOICLIP)
+Codes are built from [DETR](https://github.com/facebookresearch/detr), [DN-DETR](https://github.com/IDEA-Research/DN-DETR), [CLIP](https://github.com/openai/CLIP). We thank them for their contributions.
