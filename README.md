@@ -143,7 +143,7 @@ sh ./scripts/train_hico.sh
 ```
 
 ## Pre-trained model
-You can also directly download the pretrained [model](https://google.com) of DP-HOI for ResNet50.
+You can also directly download the pre-trained [model](https://google.com) of DP-HOI for ResNet50.
 
 ## Results
 HICO-DET.
