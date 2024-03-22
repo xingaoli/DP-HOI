@@ -23,6 +23,26 @@ git clone https://github.com/openai/CLIP.git && cd CLIP && python setup.py devel
 ```
 
 ### Dataset
+1. haa500 dataset
+Download the haa500 dataset from the following URL and unzip it to the DP-HOI/pre_datasets folder.
+```
+http://xxxx
+```
+run pre_haa500.py
+```
+python ./pre_datasets/pre_haa500.py
+```
+Move the processed dataset to the DP-HOI/data folder.
+
+2. kinetics700 dataset
+Download the kinetics700 dataset from the following URL and unzip it to the DP-HOI/pre_datasets folder.
+```
+http://xxxx
+```
+run pre_kinetics700.py
+```
+python ./pre_datasets/pre_kinetics700.py
+```
 
 The pre-training dataset structure is:
 ```
