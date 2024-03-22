@@ -69,7 +69,7 @@ http://xxxx
 ```
 http://xxxx
 ```
-&emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_objects365.json` to the `DP-HOI/data/objects365/annotations` folder
+&emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_objects365_10k.json` to the `DP-HOI/data/objects365/annotations` folder
 
 When you have completed the above steps, the pre-training dataset structure is:
 ```
@@ -85,113 +85,53 @@ DP-HOI
  
  |   └─ object365
  |       |─ annotations
- |       |   |─ trainval_vcoco.json
- |       |   |─ test_vcoco.json
- |       |   |─ corre_vcoco.npy
- |       |   |─ vcoco_test.json
- |       |   |─ instances_vcoco_all_2014.json
+ |       |   |─ train_objects365_10k.json
  |       |─ images
  |       |   |─ train2014
- |       |   └─ val2014
  
  |   └─ haa500
  |       |─ annotations
- |       |   |─ test_2019.json
- |       |   |─ train_2019.json
- |       |   |─ obj_clipvec.npy
- |       |   |─ sim_index_hoia.pickle
- |       |   └─ corre_hoia.npy
+ |       |   |─ train_haa500_50k.json
  |       |─ images
- |       |   |─ test
- |       |   └─ trainval
+ |       |   └─ train
 
  |   └─ kinetics700
  |       |─ annotations
- |       |   |─ test_2019.json
- |       |   |─ train_2019.json
- |       |   |─ obj_clipvec.npy
- |       |   |─ sim_index_hoia.pickle
- |       |   └─ corre_hoia.npy
+ |       |   |─ train_kinetics700_10k.json
  |       |─ images
- |       |   |─ test
- |       |   └─ trainval
+ |       |   └─ train
 
  |   └─ flickr30k
  |       |─ annotations
- |       |   |─ test_2019.json
- |       |   |─ train_2019.json
- |       |   |─ obj_clipvec.npy
- |       |   |─ sim_index_hoia.pickle
- |       |   └─ corre_hoia.npy
+ |       |   |─ train_flickr30k.json
  |       |─ images
- |       |   |─ test
- |       |   └─ trainval
+ |       |   └─ train
 
  |   └─ vg
  |       |─ annotations
- |       |   |─ test_2019.json
- |       |   |─ train_2019.json
- |       |   |─ obj_clipvec.npy
- |       |   |─ sim_index_hoia.pickle
- |       |   └─ corre_hoia.npy
+ |       |   |─ train_vg.json
  |       |─ images
- |       |   |─ test
- |       |   └─ trainval
+ |       |   └─ train
 ```
 
-The annotations file,
-pre-trained weights and 
-trained parameters can be downloaded [here]()
-
-Please download the images at the official website for the datasets above.
+### Initial parameters
+To speed up the pre-training process, consider using DETR's pre-trained weights for initialization. 
+Download the pretrained model of DETR detector for ResNet50 , and put it to the `params` directory.
 
 
-### Trained parameters
-
-## Training
-After the preparation, you can start the training with the following command.
-
-For the HICO-DET training.
+## Pre-training
+After the preparation, you can start training with the following commands.
 ```
-python -m torch.distributed.launch \
---nproc_per_node=8 \
---use_env \
-main.py \
---pretrained params/detr-r50-pre.pth \
---hoi \
---dataset_file hico \
---hoi_path data/hico_20160224_det \
---num_obj_classes 80 \
---num_verb_classes 117 \
---backbone resnet50 \
---set_cost_bbox 2.5 \
---set_cost_giou 1 \
---bbox_loss_coef 2.5 \
---giou_loss_coef 1 \
-```
-
-For the V-COCO training.
-```
-python -m torch.distributed.launch \
---nproc_per_node=8 \
---use_env \
-main.py \
---pretrained params/detr-r50-pre-vcoco.pth \
---hoi \
---dataset_file vcoco \
---hoi_path data/v-coco \
---num_obj_classes 81 \
---num_verb_classes 29 \
---backbone resnet50 \
---set_cost_bbox 2.5 \
---set_cost_giou 1 \
---bbox_loss_coef 2.5 \
---giou_loss_coef 1 \
+sh ./config/train.sh
 ```
 
 ## Fine-tuning
-You can convert pre-training parameters to downstream model as follows.
-
+After the pre-training, you can start fine-tuning with the following commands.
+Firstly, you can convert pre-training parameters to downstream model as follows.
+```
+python ./util/convert_parameters_hico.sh --fine-tuning_model_name
+```
+Then, fine-tuning according to the official code of the corresponding model.
 
 
 ## Results
