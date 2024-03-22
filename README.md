@@ -13,8 +13,14 @@ The paper is accepted to CVPR2024.
 ## Preparation
 
 ### Environment
-Our implementation uses environment the same as [HOICLIP](https://github.com/Artanic30/HOICLIP),
-please follow HOICLIP to set up pytorch environment.
+1. Install the dependencies.
+```
+pip install -r requirements.txt
+```
+2. Clone and build CLIP.
+```
+git clone https://github.com/openai/CLIP.git && cd CLIP && python setup.py develop && cd ..
+```
 
 ### Dataset
 
