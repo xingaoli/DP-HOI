@@ -103,38 +103,10 @@ main.py \
 --giou_loss_coef 1 \
 ```
 
-## Evaluation
-The evaluation is conducted at the end of each epoch during the training. The results are written in `outputs/log.txt` like below:
+## Fine-tuning
+You can convert pre-training parameters to downstream model as follows.
 
-You can also conduct the evaluation with trained parameters as follows.
 
-HICO-DET
-```
-python -m torch.distributed.launch \
---nproc_per_node=8 \
---use_env \
-main.py \
---pretrained params/checkpoint.pth \
---hoi \
---dataset_file hico \
---hoi_path data/hico_20160224_det \
---num_obj_classes 80 \
---num_verb_classes 117 \
---backbone resnet50 \
---set_cost_bbox 2.5 \
---set_cost_giou 1 \
---bbox_loss_coef 2.5 \
---giou_loss_coef 1 \
---eval \
-```
-
-For the official evaluation of V-COCO, a pickle file of detection results have to be generated. You can generate the file as follows.
-```
-python generate_vcoco_official.py \
---param_path outputs/vcoco/ts_model/checkpoint.pth \
---save_path vcoco.pickle \
---hoi_path data/v-coco
-```
 
 ## Results
 HICO-DET.
