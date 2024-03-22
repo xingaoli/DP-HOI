@@ -1,7 +1,6 @@
 # Disentangled Pre-training for Human-Object Interaction Detection
-2^10^
-Zhuolong Li^2^,
-Xingao Li ^2^,
+Zhuolong Li<sup>\*</sup>,
+Xingao Li<sup>\*</sup>,
 Changxing Ding,
 Xiangmin Xu
 
