@@ -127,6 +127,7 @@ sh ./config/train.sh
 
 ## Fine-tuning
 After pre-training, you can start fine-tuning with the following commands.
+
 Firstly, you can convert pre-training parameters to downstream model as follows.
 ```
 python ./util/convert_parameters_hico.sh --fine-tuning_model_name
