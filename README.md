@@ -18,11 +18,11 @@ please follow HOICLIP to set up pytorch environment.
 
 ### Dataset
 
-The dataset structure is:
+The pre-training dataset structure is:
 ```
-qpic
+DP-HOI
  |─ data
- |   └─ hico_20160224_det
+ |   └─ coco
  |       |─ annotations
  |       |   |─ trainval_hico.json
  |       |   |─ test_hico.json
@@ -30,7 +30,7 @@ qpic
  |       |   |─ test2015
  |       |   └─ train2015
  
- |   └─ v-coco
+ |   └─ object365
  |       |─ annotations
  |       |   |─ trainval_vcoco.json
  |       |   |─ test_vcoco.json
@@ -41,7 +41,40 @@ qpic
  |       |   |─ train2014
  |       |   └─ val2014
  
- |   └─ hoia
+ |   └─ haa500
+ |       |─ annotations
+ |       |   |─ test_2019.json
+ |       |   |─ train_2019.json
+ |       |   |─ obj_clipvec.npy
+ |       |   |─ sim_index_hoia.pickle
+ |       |   └─ corre_hoia.npy
+ |       |─ images
+ |       |   |─ test
+ |       |   └─ trainval
+
+ |   └─ kinetics700
+ |       |─ annotations
+ |       |   |─ test_2019.json
+ |       |   |─ train_2019.json
+ |       |   |─ obj_clipvec.npy
+ |       |   |─ sim_index_hoia.pickle
+ |       |   └─ corre_hoia.npy
+ |       |─ images
+ |       |   |─ test
+ |       |   └─ trainval
+
+ |   └─ flickr30k
+ |       |─ annotations
+ |       |   |─ test_2019.json
+ |       |   |─ train_2019.json
+ |       |   |─ obj_clipvec.npy
+ |       |   |─ sim_index_hoia.pickle
+ |       |   └─ corre_hoia.npy
+ |       |─ images
+ |       |   |─ test
+ |       |   └─ trainval
+
+ |   └─ vg
  |       |─ annotations
  |       |   |─ test_2019.json
  |       |   |─ train_2019.json
