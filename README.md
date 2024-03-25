@@ -147,18 +147,18 @@ You can also directly download the pre-trained [model](https://google.com) of DP
 
 ## Results
 HICO-DET.
-|| Full (D) | Rare (D) | Non-rare (D) | Full(KO) | Rare (KO) | Non-rare (KO) | Model | log
+|| Full (D) | Rare (D) | Non-rare (D) | Full(KO) | Rare (KO) | Non-rare (KO) | Model | Config
 | :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
-|ours (CDN)| 34.27 | 30.02 | 35.54 | 37.05 | 33.09 | 38.23 | [model](https://drive.google.com) | [log](https://drive.google.com)
-|ours (GEN<sub>s</sub>)| 34.40 | 31.17 | 35.36 | 38.25 | 35.64 | 39.03 | [model](https://drive.google.com) | [log](https://drive.google.com)
-|ours (HOICLIP)| 36.56 | 34.36 | 37.22 | - | - | - | [model](https://drive.google.com) | [log](https://drive.google.com)
+|ours (CDN)| 34.27 | 30.02 | 35.54 | 37.05 | 33.09 | 38.23 | [model](https://drive.google.com) | [config](https://drive.google.com)
+|ours (GEN<sub>s</sub>)| 34.40 | 31.17 | 35.36 | 38.25 | 35.64 | 39.03 | [model](https://drive.google.com) | [config](https://drive.google.com)
+|ours (HOICLIP)| 36.56 | 34.36 | 37.22 | - | - | - | [model](https://drive.google.com) | [config](https://drive.google.com)
 
 D: Default, KO: Known object
 
 V-COCO.
 || Scenario 1 | Model | log
 | :--- | :---: | :---: | :---: |
-|ours (GEN<sub>s</sub>)| 66.2| [model](https://drive.google.com) | [log](https://drive.google.com)
+|ours (GEN<sub>s</sub>)| 66.2| [model](https://drive.google.com) | [config](https://drive.google.com)
 
 ## Citation
 Please consider citing our paper if it helps your research.
