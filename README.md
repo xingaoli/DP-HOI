@@ -156,7 +156,7 @@ HICO-DET.
 D: Default, KO: Known object
 
 V-COCO.
-|| Scenario 1 | Model | log
+|| Scenario 1 | Model | Config
 | :--- | :---: | :---: | :---: |
 |ours (GEN<sub>s</sub>)| 66.2| [model](https://drive.google.com) | [config](https://drive.google.com)
 
