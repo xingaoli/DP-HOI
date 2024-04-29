@@ -148,7 +148,7 @@ You can also directly download the pre-trained [model](https://drive.google.com/
 ## Results
 HICO-DET.
 | | Full (D) | Rare (D) | Non-rare (D) | Model | Config
-| :--- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
+| :--- | :---: | :---: | :---: | :---: | :---: |
 |ours (UPT)| 33.36 | 28.74 | 34.75 | [model](https://drive.google.com) | [config](https://drive.google.com)
 |ours (PViC)| 35.77 | 32.26 | 36.81 | [model](https://drive.google.com) | [config](https://drive.google.com)
 |ours (CDN-S<sup>†<sup>)| 35.00 | 32.38 | 35.78 | [model](https://drive.google.com) | [config](https://drive.google.com)
