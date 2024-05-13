@@ -160,7 +160,7 @@ D: Default, †: DN strategy from [DN-DETR](https://github.com/IDEA-Research/DN-
 V-COCO.
 || Scenario 1 | Model | Config
 | :--- | :---: | :---: | :---: |
-|ours (GEN<sub>s</sub>)| 66.2| [model](https://drive.google.com) | [config](https://drive.google.com)
+|ours (GEN<sub>s</sub>)| 66.6| [model](https://drive.google.com/file/d/1Kr4TyCbcfhh5s3u5dWjsFfgg1ED9ODDe/view?usp=sharing) | [config](https://drive.google.com)
 
 ## Citation
 Please consider citing our paper if it helps your research.
