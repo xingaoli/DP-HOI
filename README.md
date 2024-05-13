@@ -151,7 +151,7 @@ HICO-DET.
 | :--- | :---: | :---: | :---: | :---: | :---: |
 |ours (UPT)| 33.36 | 28.74 | 34.75 | [model](https://drive.google.com) | [config](https://drive.google.com)
 |ours (PViC)| 35.77 | 32.26 | 36.81 | [model](https://drive.google.com) | [config](https://drive.google.com)
-|ours (CDN-S<sup>†</sup>)| 35.00 | 32.38 | 35.78 | [model](https://drive.google.com) | [config](https://drive.google.com)
+|ours (CDN-S<sup>†</sup>)| 35.00 | 32.38 | 35.78 | [model](https://drive.google.com/file/d/1_FFccjgxMvuo3aXacZSBc77CPcDDrDdv/view?usp=sharing) | [config](https://drive.google.com)
 |ours (CDN-S<sup>†</sup>+CCS<sup>*</sup>)| 35.38 | 34.61 | 35.61 | [model](https://drive.google.com) | [config](https://drive.google.com)
 |ours (HOICLIP)| 36.56 | 34.36 | 37.22 | [model](https://drive.google.com) | [config](https://drive.google.com)
 
