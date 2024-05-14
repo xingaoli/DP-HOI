@@ -146,21 +146,28 @@ sh ./scripts/train_hico.sh
 You can also directly download the pre-trained [model](https://drive.google.com/file/d/1DYBY8wHDGDPh9pyvxBewTqmpbztAzazb/view?usp=sharing) of DP-HOI for ResNet50.
 
 ## Results
-HICO-DET.
+### HICO-DET
 | | Full (D) | Rare (D) | Non-rare (D) | Model | Config
 | :--- | :---: | :---: | :---: | :---: | :---: |
-|ours (UPT)| 33.36 | 28.74 | 34.75 | [model](https://drive.google.com/file/d/11JkfTQkMv7C54NJYnCwK_icHA5ZJiYSo/view?usp=sharing) | [config](https://drive.google.com)
-|ours (PViC)| 35.77 | 32.26 | 36.81 | [model](https://drive.google.com/file/d/1M_mxcyYTrUtM-mR_Wz8RoTwZedLmFU6j/view?usp=sharing) | [config](https://drive.google.com)
-|ours (CDN-S<sup>†</sup>)| 35.00 | 32.38 | 35.78 | [model](https://drive.google.com/file/d/1_FFccjgxMvuo3aXacZSBc77CPcDDrDdv/view?usp=sharing) | [config](https://drive.google.com)
-|ours (CDN-S<sup>†</sup>+CCS<sup>*</sup>)| 35.38 | 34.61 | 35.61 | [model](https://drive.google.com/file/d/1nZEcIqL_iMn44-The7bb9PAGtUu5Uz3-/view?usp=sharing) | [config](https://drive.google.com)
-|ours (HOICLIP)| 36.56 | 34.36 | 37.22 | [model](https://drive.google.com/file/d/1Y6ay5jxZQHRZ9Yr_cASAT98aTxu6vk9B/view?usp=sharing) | [config](https://drive.google.com)
+| ours (UPT) | 33.36 | 28.74 | 34.75 | [model](https://drive.google.com/file/d/11JkfTQkMv7C54NJYnCwK_icHA5ZJiYSo/view?usp=sharing) | [config](https://drive.google.com)
+| ours (PViC) | 35.77 | 32.26 | 36.81 | [model](https://drive.google.com/file/d/1M_mxcyYTrUtM-mR_Wz8RoTwZedLmFU6j/view?usp=sharing) | [config](https://drive.google.com)
+| ours (CDN-S<sup>†</sup>) | 35.00 | 32.38 | 35.78 | [model](https://drive.google.com/file/d/1_FFccjgxMvuo3aXacZSBc77CPcDDrDdv/view?usp=sharing) | [config](https://drive.google.com)
+| ours (CDN-S<sup>†</sup>+CCS<sup>*</sup>) | 35.38 | 34.61 | 35.61 | [model](https://drive.google.com/file/d/1nZEcIqL_iMn44-The7bb9PAGtUu5Uz3-/view?usp=sharing) | [config](https://drive.google.com)
+| ours (HOICLIP) | 36.56 | 34.36 | 37.22 | [model](https://drive.google.com/file/d/1Y6ay5jxZQHRZ9Yr_cASAT98aTxu6vk9B/view?usp=sharing) | [config](https://drive.google.com)
 
 D: Default, †: DN strategy from [DN-DETR](https://github.com/IDEA-Research/DN-DETR), *: data augmentation strategy from [DOQ](https://github.com/SherlockHolmes221/DOQ)
 
-V-COCO.
+### V-COCO
 || Scenario 1 | Model | Config
 | :--- | :---: | :---: | :---: |
-|ours (GEN<sub>s</sub>)| 66.6| [model](https://drive.google.com/file/d/1Kr4TyCbcfhh5s3u5dWjsFfgg1ED9ODDe/view?usp=sharing) | [config](https://drive.google.com)
+| ours (GEN<sub>s</sub>) | 66.6 | [model](https://drive.google.com/file/d/1Kr4TyCbcfhh5s3u5dWjsFfgg1ED9ODDe/view?usp=sharing) | [config](https://drive.google.com)
+
+### Zero-shot HOI Detection Results
+| | Type | Unseen | Seen | Full | Model | Config
+| :--- | :---: | :---: | :---: | :---: | :---: | :---: |
+| ours (HOICLIP) | UV | 26.30 | 34.49 | 33.34 | [model](https://drive.google.com/file/d/1RaF4-cGuHeBL9pAX3m-npFLM6O5WTBj9/view?usp=sharing) | [config](https://drive.google.com)
+| ours (HOICLIP) | RF-UC | 30.49 | 36.17 | 35.03 | [model](https://drive.google.com/file/d/1HLAgzFAup8riHKLAKlWFhntcKatF5TCt/view?usp=sharing) | [config](https://drive.google.com)
+| ours (HOICLIP) | NF-UC | 28.87 | 29.98 | 29.76 | [model](https://drive.google.com/file/d/1Xn5Eq11QtTSskhoxe7_Z3XsbZ-6x0mwk/view?usp=sharing) | [config](https://drive.google.com)
 
 ## Citation
 Please consider citing our paper if it helps your research.
