@@ -155,10 +155,11 @@ You can also directly download the pre-trained [model](https://drive.google.com/
 | ours (CDN-S<sup>†</sup>+CCS<sup>*</sup>) | 35.38 | 34.61 | 35.61 | [model](https://drive.google.com/file/d/1nZEcIqL_iMn44-The7bb9PAGtUu5Uz3-/view?usp=sharing) | [config](https://drive.google.com)
 | ours (HOICLIP) | 36.56 | 34.36 | 37.22 | [model](https://drive.google.com/file/d/1Y6ay5jxZQHRZ9Yr_cASAT98aTxu6vk9B/view?usp=sharing) | [config](https://drive.google.com)
 
-D: Default, †: DN strategy from [DN-DETR](https://github.com/IDEA-Research/DN-DETR), *: data augmentation strategy from [DOQ](https://github.com/SherlockHolmes221/DOQ)
+D: Default, †: DN strategy from [DN-DETR](https://github.com/IDEA-Research/DN-DETR), *: data augmentation strategy from [DOQ](https://github.com/SherlockHolmes221/DOQ). 
+The weights fine-tuned on HICO-DET for two-stage methods (e.g., UPT and PViC) can be download [here](https://drive.google.com/file/d/1IotuJxE8-XXrgQng_TuOSRvDGWKGA8p4/view?usp=sharing).
 
 ### V-COCO
-|| Scenario 1 | Model | Config
+| | Scenario 1 | Model | Config
 | :--- | :---: | :---: | :---: |
 | ours (GEN<sub>s</sub>) | 66.6 | [model](https://drive.google.com/file/d/1Kr4TyCbcfhh5s3u5dWjsFfgg1ED9ODDe/view?usp=sharing) | [config](https://drive.google.com)
 
