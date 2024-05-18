@@ -126,20 +126,15 @@ sh ./config/train.sh
 ```
 
 ## Fine-tuning
-After pre-training, you can start fine-tuning with the following commands.
-
-Firstly, you can convert pre-training parameters to downstream model as follows.
+After pre-training, you can start fine-tuning with the following commands. An example of fine-tuning on HOICLIP is provided below.
 ```
-python ./util/convert_parameters_hico.sh --fine-tuning_model_name --input_dir --output_dir
-```
-Then, fine-tuning according to the official code of the corresponding model.
-An example of fine-tuning on HOICLIP is provided below.
-
-```
-python ./util/convert_parameters_hico.sh HOICLIP ./logs/pre-trained/checkpoint0039.pth ./dphoi_res50.pth
-mv dphoi_res50.pth ../HOICLIP/params
-cd ../HOICLIP
-sh ./scripts/train_hico.sh
+python ./tools/convert_parameters.py \
+        --finetune_model hoiclip \
+        --load_path params/dphoi_res50_3layers.pth \
+        --save_path params/dphoi-res50-hico-hoiclip.pth \
+        --dataset hico \
+        --num_queries 64 
+sh ./scripts/finetune/hoiclip/train_hico.sh
 ```
 
 ## Pre-trained model
