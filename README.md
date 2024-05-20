@@ -131,7 +131,7 @@ After pre-training, you can start fine-tuning with the following commands. An ex
 python ./tools/convert_parameters.py \
         --finetune_model hoiclip \
         --load_path params/dphoi_res50_3layers.pth \
-        --save_path params/dphoi-res50-hico-hoiclip.pth \
+        --save_path params/dphoi_res50_hico_hoiclip.pth \
         --dataset hico \
         --num_queries 64 
 sh ./scripts/finetune/hoiclip/train_hico.sh
