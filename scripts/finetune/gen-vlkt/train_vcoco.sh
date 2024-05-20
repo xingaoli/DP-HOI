@@ -4,7 +4,7 @@ python -m torch.distributed.launch \
         --nproc_per_node=4 \
         --use_env \
         main.py \
-        --pretrained /path/to/dphoi-res50-gen-vcoco.pth \
+        --pretrained /path/to/dphoi_res50_gen_vcoco.pth \
         --output_dir ${EXP_DIR} \
         --dataset_file vcoco \
         --hoi_path /path/to/v-coco \

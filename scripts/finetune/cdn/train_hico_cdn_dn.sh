@@ -6,7 +6,7 @@ python -m torch.distributed.launch \
         --output_dir logs \
         --dataset_file hico \
         --start_epoch 0 \
-        --pretrained  /path/to/dphoi-res50-hico-cdn.pth  \
+        --pretrained  /path/to/dphoi_res50_hico_cdn.pth  \
         --hoi_path /path/to/hico_20160224_det \
         --num_obj_classes 80 \
         --num_verb_classes 117 \

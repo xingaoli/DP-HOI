@@ -18,7 +18,7 @@ python -m torch.distributed.launch \
         --use_nms_filter \
         --fix_clip \
         --batch_size 8 \
-        --pretrained /path/to/dphoi-res50-hico-hoiclip.pth \
+        --pretrained /path/to/dphoi_res50_hico_hoiclip.pth \
         --with_clip_label \
         --with_obj_clip_label \
         --gradient_accumulation_steps 1 \
