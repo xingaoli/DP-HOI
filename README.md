@@ -23,53 +23,41 @@ git clone https://github.com/openai/CLIP.git && cd CLIP && python setup.py devel
 ```
 
 ### Dataset
-1. haa500 dataset
+1. HAA500 dataset
 
-&emsp; Download the haa500 dataset from the following URL and unzip it to the `DP-HOI/pre_datasets` folder.
-```
-http://xxxx
-```
-&emsp; run `pre_haa500.py`
+&emsp; Download the [Haa500_v1_1](https://www.cse.ust.hk/haa/) dataset and unzip it to the `DP-HOI/dataset` folder.
+
+&emsp; Run `pre_haa500.py`.
 ```
 python ./pre_datasets/pre_haa500.py
 ```
-&emsp; Move the processed haa500 dataset to the `DP-HOI/data` folder.
 
-2. kinetics700 dataset
+2. Kinetics700 dataset
 
-&emsp; Download the kinetics700 dataset from the following URL and unzip it to the `DP-HOI/pre_datasets` folder.
-```
-http://xxxx
-```
-&emsp; run `pre_kinetics700.py`
+&emsp; Download the [Kinetics700](https://deepmind.com/research/open-source/kinetics) dataset and unzip it to the `DP-HOI/dataset` folder.
+
+&emsp; Run `pre_kinetics700.py`.
 ```
 python ./pre_datasets/pre_kinetics700.py
 ```
-&emsp; Move the processed kinetics700 dataset to the `DP-HOI/data` folder.
 
-3. flickr30k dataset
+3. Flickr30k dataset
 
-&emsp; Download the flickr30k dataset from the following URL and directly unzip it to the `DP-HOI/data` folder.
-```
-http://xxxx
-```
+&emsp; Download the [Flickr30k](https://huggingface.co/datasets/nlphuji/flickr30k) dataset from the following URL and directly unzip it to the `DP-HOI/dataset` folder.
+
 &emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_flickr30k.json` to the `DP-HOI/data/flickr30k/annotations` folder
 
-4. vg dataset
+4. VG dataset
 
-&emsp; Download the vg dataset from the following URL and directly unzip it to the `DP-HOI/data` folder.
-```
-http://xxxx
-```
+&emsp; Download the [VG](https://homes.cs.washington.edu/~ranjay/visualgenome/index.html) dataset from the following URL and directly unzip it to the `DP-HOI/data` folder.
+
 &emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_vg.json` to the `DP-HOI/data/vg/annotations` folder
 
-5. objects365 dataset
+5. Objects365 dataset
 
-&emsp; Download the objects365 dataset from the following URL and directly unzip it to the `DP-HOI/data` folder.
-```
-http://xxxx
-```
-&emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_objects365_10k.json` to the `DP-HOI/data/objects365/annotations` folder
+&emsp; Download the [Objects365](https://www.objects365.org/overview.html) dataset from the following URL and directly unzip it to the `DP-HOI/dataset` folder.
+
+&emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_objects365_100k.json` to the `DP-HOI/data/objects365/annotations` folder
 
 When you have completed the above steps, the pre-training dataset structure is:
 ```
@@ -83,31 +71,31 @@ DP-HOI
  |       |   |─ test2015
  |       |   └─ train2015
  
- |   └─ object365
+ |   └─ Object365
  |       |─ annotations
  |       |   |─ train_objects365_10k.json
  |       |─ images
  |       |   |─ train2014
  
- |   └─ haa500
+ |   └─ Haa500
  |       |─ annotations
  |       |   |─ train_haa500_50k.json
  |       |─ images
  |       |   └─ train
 
- |   └─ kinetics700
+ |   └─ Kinetics700
  |       |─ annotations
  |       |   |─ train_kinetics700_10k.json
  |       |─ images
  |       |   └─ train
 
- |   └─ flickr30k
+ |   └─ Flickr30k
  |       |─ annotations
  |       |   |─ train_flickr30k.json
  |       |─ images
  |       |   └─ train
 
- |   └─ vg
+ |   └─ VG
  |       |─ annotations
  |       |   |─ train_vg.json
  |       |─ images
