@@ -1,0 +1,15 @@
+python -m torch.distributed.launch \
+       --master_port=26000 \
+       --nproc_per_node=8 \
+       --use_env main.py \
+       --coco_path data/detection \
+       --action_k700_path data/action/kinetics-700 \
+       --action_haa500_path data/action/haa500 \
+       --caption_path data/caption \
+       --pretrained params/detr-r50-e632da11.pth \
+       --epochs 50 \
+       --lr_drop 30 \
+       --batch_size 4 \
+       --output_dir logs \
+       --dec_layers 3 \
+       --num_workers 4 

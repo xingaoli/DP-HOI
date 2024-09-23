@@ -7,7 +7,7 @@ Xiangmin Xu
 The paper is accepted to CVPR2024.
 
 <div align="center">
-  <img src="img/overview_dphoi.png" width="900px" />
+  <img src="paper_images/overview_dphoi.png" width="900px" />
 </div>
 
 ## Preparation
@@ -25,7 +25,7 @@ git clone https://github.com/openai/CLIP.git && cd CLIP && python setup.py devel
 ### Dataset
 1. HAA500 dataset
 
-&emsp; Download the [Haa500_v1_1](https://www.cse.ust.hk/haa/) dataset and unzip it to the `DP-HOI/dataset` folder.
+&emsp; Download the [Haa500_v1_1](https://www.cse.ust.hk/haa/) dataset and unzip it to the `DP-HOI/data/action` folder.
 
 &emsp; Run `pre_haa500.py`.
 ```
@@ -34,7 +34,7 @@ python ./pre_datasets/pre_haa500.py
 
 2. Kinetics700 dataset
 
-&emsp; Download the [Kinetics700](https://deepmind.com/research/open-source/kinetics) dataset and unzip it to the `DP-HOI/dataset` folder.
+&emsp; Download the [Kinetics700](https://deepmind.com/research/open-source/kinetics) dataset and unzip it to the `DP-HOI/data/action` folder.
 
 &emsp; Run `pre_kinetics700.py`.
 ```
@@ -43,74 +43,70 @@ python ./pre_datasets/pre_kinetics700.py
 
 3. Flickr30k dataset
 
-&emsp; Download the [Flickr30k](https://huggingface.co/datasets/nlphuji/flickr30k) dataset from the following URL and directly unzip it to the `DP-HOI/dataset` folder.
-
-&emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_flickr30k.json` to the `DP-HOI/data/flickr30k/annotations` folder
+&emsp; Download the [Flickr30k](https://huggingface.co/datasets/nlphuji/flickr30k) dataset from the following URL and directly unzip it to the `DP-HOI/data/caption` folder.
 
 4. VG dataset
 
-&emsp; Download the [VG](https://homes.cs.washington.edu/~ranjay/visualgenome/index.html) dataset from the following URL and directly unzip it to the `DP-HOI/data` folder.
+&emsp; Download the [VG](https://homes.cs.washington.edu/~ranjay/visualgenome/index.html) dataset from the following URL and directly unzip it to the `DP-HOI/data/caption` folder.
 
-&emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_vg.json` to the `DP-HOI/data/vg/annotations` folder
+&emsp; Download and unzip the processed [annotations.zip](https://drive.google.com/file/d/1IotuJxE8-XXrgQng_TuOSRvDGWKGA8p4/view?usp=sharing) to `DP-HOI/data/caption/annotations` folder.
 
 5. Objects365 dataset
 
-&emsp; Download the [Objects365](https://www.objects365.org/overview.html) dataset from the following URL and directly unzip it to the `DP-HOI/dataset` folder.
+&emsp; Download the [Objects365](https://www.objects365.org/overview.html) dataset from the following URL and directly unzip it to the `DP-HOI/data/datection` folder.
 
-&emsp; Move the processed json file in the `DP-HOI/pre_datasets/train_objects365_100k.json` to the `DP-HOI/data/objects365/annotations` folder
+6. COCO dataset
+
+&emsp; Download the [COCO](https://cocodataset.org/#home) dataset from the following URL and directly unzip it to the `DP-HOI/data/datection` folder.
+
+&emsp; Download and move the processed json file [coco_objects365_200k.json](https://drive.google.com/file/d/1uGvxgL-uaIu9iLcnGazaBIJ5fTpKHqbs/view?usp=sharing) to the `DP-HOI/data/detection/annotations` folder.
 
 When you have completed the above steps, the pre-training dataset structure is:
 ```
 DP-HOI
  |─ data
- |   └─ coco
+ |   └─ action
+ |     └─ haa500  
  |       |─ annotations
- |       |   |─ trainval_hico.json
- |       |   |─ test_hico.json
+ |       |   |─ train_haa500.json
  |       |─ images
- |       |   |─ test2015
- |       |   └─ train2015
+ |       |─ videos
+ |     └─ kinetics-700  
+ |       |─ annotations
+ |       |   |─ train_kinetics700.json
+ |       |─ images
+ |       |─ videos
+
+ |   └─ caption
+ |     └─ annotations
+ |       |─ Flickr30k_VG_cluster_dphoi.json
+ |       |─ triplets_category.txt
+ |       |─ triplets_features.pth
+ |     └─ Flickr30k  
+ |       |─ images
+ |     └─ VG
+ |       |─ images
  
- |   └─ Object365
- |       |─ annotations
- |       |   |─ train_objects365_10k.json
+ |   └─ detection
+ |     └─ annotations
+ |       |─ coco_objects365_200k.json
+ |     └─ coco  
  |       |─ images
- |       |   |─ train2014
- 
- |   └─ Haa500
  |       |─ annotations
- |       |   |─ train_haa500_50k.json
+ |       |   |─ instances_val2017.json
+ |     └─ objects365
  |       |─ images
- |       |   └─ train
-
- |   └─ Kinetics700
- |       |─ annotations
- |       |   |─ train_kinetics700_10k.json
- |       |─ images
- |       |   └─ train
-
- |   └─ Flickr30k
- |       |─ annotations
- |       |   |─ train_flickr30k.json
- |       |─ images
- |       |   └─ train
-
- |   └─ VG
- |       |─ annotations
- |       |   |─ train_vg.json
- |       |─ images
- |       |   └─ train
 ```
 
 ### Initial parameters
 To speed up the pre-training process, consider using DETR's pre-trained weights for initialization. 
-Download the pretrained model of DETR detector for ResNet50 , and put it to the `params` directory.
+Download the [pretrained model](https://dl.fbaipublicfiles.com/detr/detr-r50-e632da11.pth) of DETR detector for ResNet50 , and put it to the `params` directory.
 
 
 ## Pre-training
 After the preparation, you can start training with the following commands.
 ```
-sh ./config/train.sh
+sh ./scripts/pretrain/train.sh
 ```
 
 ## Fine-tuning
