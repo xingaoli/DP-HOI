@@ -57,7 +57,6 @@ if __name__ == '__main__':
     quotient = args.num_videos // num_actions
     remainder = args.num_videos % num_actions
     num_videosamples = [quotient] * (num_actions - remainder) + [quotient + 1] * remainder
-    i = 0
     for actionname in os.listdir(args.file_path):
         number = 0
         actionpath = os.path.join(args.file_path, actionname)
@@ -69,10 +68,6 @@ if __name__ == '__main__':
             number += process_video_to_frames(videopath, output_videopath, annotations, action_dict, actionname)
             if number >= num_videosamples[action_dict[actionname]]:
                 break
-            break
-        i += 1
-        if i > 10:
-            break
     print("sample videos: ", len(annotations))
     with open(os.path.join(args.output_path, "annotations/train_kinetics700.json"), 'w', encoding='utf-8') as file:
         file.write(json.dumps(annotations, ensure_ascii=False))
