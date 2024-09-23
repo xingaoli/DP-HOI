@@ -59,7 +59,7 @@ python ./pre_datasets/pre_kinetics700.py
 
 &emsp; Download the [COCO](https://cocodataset.org/#home) dataset from the following URL and directly unzip it to the `DP-HOI/data/datection` folder.
 
-&emsp; Download and move the processed json file [coco_objects365_200k.json](https://drive.google.com/file/d/1uGvxgL-uaIu9iLcnGazaBIJ5fTpKHqbs/view?usp=sharing) to the `DP-HOI/data/detection/annotations` folder.
+&emsp; Download and move the processed [coco_objects365_200k.json](https://drive.google.com/file/d/1uGvxgL-uaIu9iLcnGazaBIJ5fTpKHqbs/view?usp=sharing) to the `DP-HOI/data/detection/annotations` folder.
 
 When you have completed the above steps, the pre-training dataset structure is:
 ```
