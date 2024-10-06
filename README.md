@@ -4,7 +4,7 @@ Xingao Li<sup>\*</sup>,
 Changxing Ding,
 Xiangmin Xu
 
-The paper is accepted to CVPR2024.
+The paper is accepted to [CVPR2024](https://openaccess.thecvf.com/content/CVPR2024/papers/Li_Disentangled_Pre-training_for_Human-Object_Interaction_Detection_CVPR_2024_paper.pdf).
 
 <div align="center">
   <img src="paper_images/overview_dphoi.png" width="900px" />
