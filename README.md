@@ -49,7 +49,7 @@ python ./pre_datasets/pre_kinetics700.py
 
 &emsp; Download the [VG](https://homes.cs.washington.edu/~ranjay/visualgenome/index.html) dataset from the following URL and directly unzip it to the `DP-HOI/data/caption` folder.
 
-&emsp; Download and unzip the processed [annotations.zip](https://drive.google.com/file/d/1IotuJxE8-XXrgQng_TuOSRvDGWKGA8p4/view?usp=sharing) to `DP-HOI/data/caption/annotations` folder.
+&emsp; Download and unzip the processed [annotations.zip](https://drive.google.com/file/d/14QBALW-aAfiSbP3sXn6suEGKsT2FmCmh/view?usp=sharing) to `DP-HOI/data/caption/annotations` folder.
 
 5. Objects365 dataset
 
