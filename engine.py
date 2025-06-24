@@ -27,11 +27,7 @@ def train_one_epoch(model: torch.nn.Module, criterion: torch.nn.Module,
     metric_logger.add_meter('class_error', utils.SmoothedValue(window_size=1, fmt='{value:.2f}'))
     header = 'Epoch: [{}]'.format(epoch)
     print_freq = 10
-    i2 = 0
     for samples, targets in metric_logger.log_every(data_loader, print_freq, header):
-        i2 += 1
-        if i2 > 20:
-            break
         samples = samples.to(device)
         targets = [{k: v.to(device) for k, v in t.items()} for t in targets]
 

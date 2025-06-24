@@ -57,7 +57,7 @@ python ./pre_datasets/pre_kinetics700.py
 
 6. COCO dataset
 
-&emsp; Download the [COCO](https://cocodataset.org/#home) dataset from the following URL and directly unzip it to the `DP-HOI/data/datection` folder.
+&emsp; Download the [COCO](https://cocodataset.org/#home) 2017 dataset from the following URL and directly unzip it to the `DP-HOI/data/datection` folder.
 
 &emsp; Download and move the processed [coco_objects365_200k.json](https://drive.google.com/file/d/1uGvxgL-uaIu9iLcnGazaBIJ5fTpKHqbs/view?usp=sharing) to the `DP-HOI/data/detection/annotations` folder.
 
